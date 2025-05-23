@@ -183,10 +183,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Aes.c" />
+    <ClCompile Include="Downloader.c" />
     <ClCompile Include="DropperProcessHollowing.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Aes.h" />
+    <ClInclude Include="Downloader.h" />
     <ClInclude Include="DropperProcessHollowing.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

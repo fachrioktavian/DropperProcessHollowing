@@ -9,6 +9,7 @@
 x64/
 x86/
 Dropper*/
+Powershell/
 
 # User-specific files
 *.user

@@ -21,12 +21,18 @@
     <ClCompile Include="Aes.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Downloader.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Aes.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="DropperProcessHollowing.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Downloader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
